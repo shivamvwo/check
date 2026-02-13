@@ -4,6 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Check</title>
+        <script> 
+        const urlParams = new URLSearchParams(window.location.search);
+          window.VWO = window.VWO || [];
+          window.VWO.push(['setSessionId', () => {
+            const sessionId = urlParams.get('sessionId');
+            console.log(sessionId)
+
+            return sessionId;
+          }]);
+
+          window.VWO.push(['setVisitorId', () => {
+            const uuid = urlParams.get('uuid');
+            console.log(uuid)
+            return uuid;
+          }]);
+    </script>
 <!-- Start VWO Async SmartCode -->
 <link rel="preconnect" href="https://dev.visualwebsiteoptimizer.com" />
 <script type='text/javascript' id='vwoCode'>
