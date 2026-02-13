@@ -8,7 +8,7 @@
         const urlParams = new URLSearchParams(window.location.search);
           window.VWO = window.VWO || [];
           window.VWO.push(['setSessionId', () => {
-            const sessionId = urlParams.get('sessionId');
+            const sessionId = +urlParams.get('sessionId');
             console.log(sessionId)
 
             return sessionId;
